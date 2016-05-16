@@ -34,7 +34,7 @@ def calc_psnr(image_path, filter):
     for n1 in range(0, MAXI):
         for n2 in range(0, MAXI):
             MSE += ((origin_image_double[n1][n2] - filter_image[n1][n2]) ** 2)
-    MSE /= (MAXI * MAXI)
+    MSE /= (256 ** 2)
     print('MSE: {0}'.format(MSE))
     PSNR = 10 * np.log10(MAXI ** 2 / MSE)
     print('PSNR: {0}'.format(PSNR))
